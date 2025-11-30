@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
+
+
 <style>
 
 /*======================================
@@ -97,6 +99,7 @@
 
 
 /* project image zoom effect */
+
 .zoom-effect {
   overflow: hidden;
   transition: transform 0.3s ease-out;
@@ -106,126 +109,41 @@
   transform: scale(1.1);
 }
 
-/* Enhanced Button Styles with Visual Feedback */
-.btn {
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  position: relative;
-  overflow: hidden;
-  border-radius: 50px;
-  font-weight: 600;
+/* Stats counter styles */
+.stats-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 0;
+  margin: 40px 0;
+  border-radius: 10px;
 }
 
-/* Primary Buttons (Yellow) - YouTube, LinkedIn, Download CV, GitHub */
-.btn-primary {
-  background-color: #ffbd39;
-  border-color: #ffbd39;
-  color: #000;
-  box-shadow: 0 2px 5px rgba(255, 189, 57, 0.3);
+.stat-item {
+  text-align: center;
+  color: white;
+  padding: 20px;
 }
 
-.btn-primary:hover {
-  background-color: #e6a800;
-  border-color: #e6a800;
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 5px 15px rgba(230, 168, 0, 0.4);
+.stat-number {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
 }
 
-.btn-primary:active,
-.btn-primary:focus {
-  background-color: #cc9600 !important;
-  border-color: #cc9600 !important;
-  transform: translateY(1px);
-  box-shadow: 0 2px 5px rgba(204, 150, 0, 0.3);
+.stat-label {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
 }
 
-/* Outline Button (My Works) */
-.btn-white {
-  background-color: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
-}
 
-.btn-white:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #fff !important;
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
-}
-
-.btn-white:active,
-.btn-white:focus {
-  background-color: rgba(255, 255, 255, 0.25) !important;
-  transform: translateY(1px);
-  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.2);
-}
-
-/* Ripple Effect on Click */
-.btn:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 5px;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.5);
-  opacity: 0;
-  border-radius: 100%;
-  transform: scale(1, 1) translate(-50%);
-  transform-origin: 50% 50%;
-}
-
-.btn:focus:not(:active)::after {
-  animation: ripple 0.6s ease-out;
-}
-
-@keyframes ripple {
-  0% {
-    transform: scale(0, 0);
-    opacity: 0.5;
-  }
-  100% {
-    transform: scale(20, 20);
-    opacity: 0;
-  }
-}
-
-/* Contact circle hover effects */
-.box {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.box:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.box .icon {
-  transition: all 0.3s ease;
-}
-
-.box:hover .icon {
-  transform: scale(1.1);
-}
-
-/* Active/click effect */
-.btn-primary:active, .btn-white:active, .box:active {
-  transform: scale(0.98);
-}
-
-/* Make links in contact section more visible */
-.box a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.box:hover a {
-  color: inherit;
-}
 </style>
+
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
@@ -238,7 +156,7 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Internship</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Work Experience</span></a></li>
 	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 	        </ul>
@@ -264,6 +182,7 @@
 						<span id="typing-animation"></span>
 
 						<script>
+
 						// Initialize the typing animation
 						const typingAnimationElement = document.getElementById('typing-animation');
 
@@ -280,7 +199,7 @@
 						for (let i = 0; i < text.length; i++) {
 							setTimeout(() => {
 							typingAnimationElement.textContent += text[i];
-							}, i * 200);
+							}, i * 200); // Increase the delay to slow down the typing animation
 						}
 
 						// Once the animation is complete, reset the text and start over
@@ -292,11 +211,14 @@
 
 						// Start the typing animation loop
 						playTypingAnimation(typingTexts[0]);
+
 						</script>
 
 						<br>
 						<br>
 			            <h2>Data Analyst</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
 			            <p><a href="https://www.youtube.com/@SixStringStories" class="btn btn-primary py-3 px-4">YouTube</a> 
 							<a href="https://github.com/Manideep-N" class="btn btn-white btn-outline-white py-3 px-4">My Works</a></p>
 		            </div>
@@ -333,34 +255,40 @@
 
 								<div class="skill-mf">
 									<p class="title-s">Skills</p>
+									<span>Python</span> 
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
 									<span>SQL</span> 
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 50%; height: 2px;" aria-valuenow="50" aria-valuemin="0"
-											aria-valuemax="50"></div>
-									</div>
-									
-									<span>EXCEL</span> 
-									<div class="progress">
-									<div class="progress-bar" role="progressbar" style="width: 50%; height: 2px;" aria-valuenow="50" aria-valuemin="0"
-											aria-valuemax="50"></div>
+									<div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0"
+											aria-valuemax="100"></div>
 									</div>
 
-									<span>PYTHON</span>
+									<span>Snowflake</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 50%; height: 2px;" aria-valuenow="50" aria-valuemin="0"
-											aria-valuemax="50"></div>
+										<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+											aria-valuemax="100"></div>
 									</div>
 									
-									<span>Data Visualization</span>
+									<span>Excel & Power BI</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 50%; height: 2px;" aria-valuenow="50" aria-valuemin="0"
-											aria-valuemax="50"></div>
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
 									</div>
 									
-									<span>Statistical Analysis</span>
+									<span>ETL & Feature Engineering</span>
 									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 50%; height: 2px;" aria-valuenow="50" aria-valuemin="0"
-											aria-valuemax="50"></div>
+										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+
+									<span>Data Cleaning & Visualization</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 88%" aria-valuenow="88" aria-valuemin="0"
+											aria-valuemax="100"></div>
 									</div>
 								</div>
 							</div>
@@ -374,20 +302,18 @@
 								<h1 class="big">About</h1>
 								<h2 class="mb-4">About Me</h2>
 								
-								<p>A Computer Science graduate and aspiring Data Analyst with hands-on experience in SQL, Excel, Power BI, and Python.
-								I enjoy turning raw data into meaningful insights and creating dashboards that support better decision-making.
-								I've also worked as an R&D intern, doing market research, data analysis, and designing user-friendly app interfaces using Figma.
-								I'm eager to grow and contribute to innovative, impactful projects.</p>
+								<p>I'm a Computer Science graduate and aspiring Data Analyst who enjoys turning messy data into clear insights. I work with SQL, Python, Excel, and Power BI, and I've used them to build dashboards, improve data pipelines, and solve real analysis problems.</p>
+								<p>At CARS24, I helped speed up the SMS feature pipeline by 60%, improved structured data coverage by 25%, and strengthened data quality across large datasets. Earlier, as an R&D intern, I worked on market research, data analysis, and designing clean, user-friendly app interfaces in Figma.</p>
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Education:</span> <span>Bachelor of Engineering</span></li>
-									<li class="d-flex"><span>Languages:</span> <span>SQL, Python</span></li>
-									<li class="d-flex"><span>Tools:</span> <span>Excel, Power BI</span></li>
+									<li class="d-flex"><span>Skills:</span> <span>Python · SQL · Snowflake · Excel · Power BI · ETL · Feature Engineering · Data Cleaning · Data Visualization · Git</span></li>
 									<li class="d-flex"><span>Language:</span> <span>English, Hindi, Kannada, Telugu</span></li>
-									<li class="d-flex"><span>Interest:</span> <span>Travelling, Photography, Music, Teaching</span></li>
+									<li class="d-flex"><span>Interest:</span> <span>Travelling, Photography, Musician, Teaching</span></li>
 									
 								</ul>
 							</div>
 						</div>
+
 
 						<div class="counter-wrap ftco-animate d-flex mt-md-3">
 							<div class="text">
@@ -400,6 +326,9 @@
 		</div>
     </section>
 
+
+
+	
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
@@ -407,12 +336,33 @@
         </div>
 
 		<div class="row">
-			<h1 class="big-4">Internships</h1>
+			<h1 class="big-4">Work Experience</h1>
 			<div class="underline"></div>
 		</div>
 		<br>
 		
 		<div class="row">
+				<div width="100%">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">CARS24</span>
+						<h2>Data Scientist – SMS Intelligence & Feature Engineering</h2>
+						<span class="position">June 25 – Present</span>
+						<p class="mt-4">CARS24 is a leading e-commerce platform for pre-owned vehicles, leveraging data-driven systems to improve customer experience and operational efficiency. 
+							<ul>
+								<li>Improved the SMS feature pipeline performance by 60% through optimized filtering, selective computation, and early-stage data reduction.</li>
+								<li>Increased structured SMS coverage by 25% by building improved keyword, amount, and category extraction logic.</li>
+								<li>Developed 160+ SMS-based features, including category counts, ratios, and user flags used in downstream analytics.</li>
+								<li>Strengthened data quality and reliability by automating ETL workflows and refactoring the codebase into modular, production-ready components.</li>
+							</ul>
+						</p>
+					</div>
+
+				</div>
+			</div>
+
+			<br>
+
+			<div class="row">
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
 						<span class="date">Janus Aviation Pvt. Ltd</span>
@@ -428,11 +378,10 @@
 					</div>
 
 				</div>
-
 				<div class="col-md-6">
 					<div class="resume-wrap ftco-animate">
 						<span class="date">Doodle Health</span>
-						<h2>Research and Development(R&D)</h2>
+						<h2>Research and Development (R&D)</h2>
 						<span class="position">May 23 - Aug 23</span>
 						<p class="mt-4">Doodle Health is a wellness-tech startup focused on enhancing youth mental well-being through research, innovation, and digital solutions. 
 							<ul>
@@ -477,7 +426,7 @@
 
 			<div class="row justify-content-center mt-5">
     			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/1FuDoG9Kja9XP85A4G4TwJHqE63Xs2wNd/view?usp=drive_link" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    				<p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
     			</div>
     		</div>
     	</div>
@@ -572,6 +521,7 @@
 		</div>	
 	</section>
 
+
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
@@ -584,44 +534,43 @@
 
         <div class="row d-flex contact-info mb-5">
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<a href="https://maps.google.com" class="align-self-stretch box p-4 text-center">
+          	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-map-signs"></span>
           		</div>
           		<h3 class="mb-4">Address</h3>
 	            <p>Bengaluru, India</p>
-	          </a>
+	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<a href="tel:+919742877979" class="align-self-stretch box p-4 text-center">
+          	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-phone2"></span>
           		</div>
           		<h3 class="mb-4">Contact Number</h3>
-	            <p>+91 9742877979</p>
-	          </a>
+	            <p><a href="tel://+91 9742877979">+91 9742877979</a></p>
+	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<a href="mailto:manideepgoud96@gmail.com" class="align-self-stretch box p-4 text-center">
+          	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p>manideepgoud96@gmail.com</p>
-	          </a>
+	            <p><a href="mailto:manideepgoud96@gmail.com">manideepgoud96@gmail.com</a></p>
+	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
-          	<a href="https://drive.google.com/file/d/1FuDoG9Kja9XP85A4G4TwJHqE63Xs2wNd/view?usp=drive_link" class="align-self-stretch box p-4 text-center">
+          	<div class="align-self-stretch box p-4 text-center">
           		<div class="icon d-flex align-items-center justify-content-center">
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Download Resume</h3>
-	            <p>Resume</p>
-	          </a>
+	            <p><a href="#">resumelink</a></p>
+	          </div>
           </div>
-        </div>
-      </div>
-    </section>
+   </div>
+ </section>
 	
     <footer class="ftco-footer ftco-section">
 		<div class="container">
@@ -636,8 +585,10 @@
 		</div>
 	</footer>
 
+
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
